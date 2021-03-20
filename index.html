@@ -612,10 +612,10 @@
   function ConteoRegresivo()
 {
     var fecha=new Date("2019","03","20");
-    var hoy=new Date();
+    var hoy=new Date("2021","03","20");
     var dias=0;
     var meses=0;
-    var años=0;
+    var anhos=0;
     var horas=0;
     var minutos=0;
     var segundos=0;
@@ -630,13 +630,15 @@
         diferencia=(hoy.getTime()-fecha.getTime())/1000;
         segundos=Math.floor(diferencia)
 
-        var años=(hoy.getFullYear()-fecha.getFullYear());
+        anhos=(hoy.getFullYear()-fecha.getFullYear()) + 1;
         
-        var meses=fecha.getMonth() - hoy.getMonth() + (12 * (hoy.getFullYear() - fecha.getFullYear()));
+        meses=fecha.getMonth() - hoy.getMonth() + (12 * (hoy.getFullYear() - fecha.getFullYear()));
         if(hoy.getDate() < fecha.getDate()){ 
           meses--; 
+        }else{
+          meses++;
         }
-        document.getElementById("counter-coffee").innerHTML = años;
+        document.getElementById("counter-coffee").innerHTML = anhos;
         document.getElementById("counter-music").innerHTML = meses;
         document.getElementById("counter-clock").innerHTML = dias;
         document.getElementById("counter-heart").innerHTML = horas;
