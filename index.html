@@ -630,7 +630,7 @@
         diferencia=(hoy.getTime()-fecha.getTime())/1000;
         segundos=Math.floor(diferencia)
 
-        anhos=(hoy.getFullYear()-fecha.getFullYear()) + 1;
+        anhos=(hoy.getFullYear()-fecha.getFullYear());
         
         meses=fecha.getMonth() - hoy.getMonth() + (12 * (hoy.getFullYear() - fecha.getFullYear()));
         if(hoy.getDate() < fecha.getDate()){ 
@@ -638,7 +638,7 @@
         }else{
           meses++;
         }
-        document.getElementById("counter-coffee").innerHTML = anhos;
+        document.getElementById("counter-coffee").innerHTML = anhos + 1;
         document.getElementById("counter-music").innerHTML = meses;
         document.getElementById("counter-clock").innerHTML = dias;
         document.getElementById("counter-heart").innerHTML = horas;
